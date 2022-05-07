@@ -19,7 +19,7 @@ public class SquareContractIntegrationTest {
 
     @Test
     public void shouldReturnASquareWhenTheBaseAndTheHeightWhereEquals() {
-        final String url =  String.format("http://127.0.0.1:%s/api/v1/square/area/2/2", this.port);
+        final String url =  String.format("http://127.0.0.1:%s/api/v1/square/2/2", this.port);
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<ResponseSquareDTO> responseEntity = restTemplate.getForEntity(url, ResponseSquareDTO.class);
@@ -30,7 +30,7 @@ public class SquareContractIntegrationTest {
 
     @Test
     public void shouldReturnARectangleWhenTheBaseAndTheHeightAreDiffenrents() {
-        final String url =  String.format("http://127.0.0.1:%s/api/v1/square/area/2/4", this.port);
+        final String url =  String.format("http://127.0.0.1:%s/api/v1/square/2/4", this.port);
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<ResponseSquareDTO> responseEntity = restTemplate.getForEntity(url, ResponseSquareDTO.class);
@@ -41,7 +41,7 @@ public class SquareContractIntegrationTest {
 
     @Test
     public void shouldReturnThatIsNotValidSquareWhenTheBaseIsNegative() {
-        final String url =  String.format("http://127.0.0.1:%s/api/v1/square/area/-2/2", this.port);
+        final String url =  String.format("http://127.0.0.1:%s/api/v1/square/-2/2", this.port);
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<ResponseSquareDTO> responseEntity = restTemplate.getForEntity(url, ResponseSquareDTO.class);

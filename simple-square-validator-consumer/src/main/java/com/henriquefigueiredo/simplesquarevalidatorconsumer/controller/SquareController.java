@@ -18,7 +18,7 @@ public class SquareController {
         this.squareRepository = squareRepository;
     }
 
-    @GetMapping(path = "/api/v1/square/area/{base}/{height}")
+    @GetMapping(path = "/api/v1/square/{base}/{height}")
     public ResponseEntity<ResponseSquareDTO> getArea(@PathVariable(value = "base") final int base,
                                                      @PathVariable(value = "height") final int height) {
         final RequestSquareDTO requestSquareDTO = new RequestSquareDTO(base, height);
